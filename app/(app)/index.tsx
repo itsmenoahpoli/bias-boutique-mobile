@@ -1,11 +1,10 @@
-import { View, Text } from "react-native";
+import { View } from "react-native";
+import { AppSplashScreen } from "@/components";
 
 export default (): JSX.Element => {
   return (
-    <View>
-      <Text className="text-2xl font-bold underline">
-        App entry page index.tsx
-      </Text>
+    <View className="flex-1 bg-red-800">
+      <AppSplashScreen />
     </View>
   );
 };
