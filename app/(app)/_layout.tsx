@@ -1,14 +1,22 @@
-import Toast from "react-native-toast-message";
-import * as SplashScreen from "expo-splash-screen";
 import { View } from "react-native";
 import { Slot } from "expo-router";
+import { StatusBar } from "expo-status-bar";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+import Toast from "react-native-toast-message";
 import "@/app.css";
 
-SplashScreen.hideAsync();
-
 export default (): JSX.Element => {
+  const insets = useSafeAreaInsets();
+
   return (
-    <View className="flex-1">
+    <View
+      style={{
+        marginTop: -insets.top,
+        marginBottom: -insets.bottom,
+      }}
+      className="flex-1"
+    >
+      <StatusBar style="light" />
       <Toast />
       <Slot />
     </View>

@@ -1,5 +1,6 @@
-import AUTH_BG from "@/assets/images/auth-bg.jpeg";
+import { AUTH_BG, BRAND_LOGO } from "@/assets";
 
 export const ASSETS = {
   AUTH_BG,
+  BRAND_LOGO,
 } as const;
