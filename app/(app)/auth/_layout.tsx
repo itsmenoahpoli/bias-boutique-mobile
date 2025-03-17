@@ -15,7 +15,7 @@ export default (): JSX.Element => {
       className="flex-1"
     >
       <ImageBackground
-        className="flex-1"
+        className="flex-1 pt-[30px]"
         resizeMode="cover"
         source={ASSETS.AUTH_BG}
       >
