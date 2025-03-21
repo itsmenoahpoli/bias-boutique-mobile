@@ -2,7 +2,7 @@ import { useRouter } from "expo-router";
 import { View, Text, FlatList, Image, TouchableOpacity } from "react-native";
 import { ArrowLeft, Search, Star } from "lucide-react-native";
 
-const albums = [
+const photocards = [
   {
     id: "1",
     name: "BTS Butter Sealed Album",
@@ -114,7 +114,7 @@ export default (): JSX.Element => {
         <TouchableOpacity onPress={handleRecirectBack}>
           <ArrowLeft size={24} color="white" />
         </TouchableOpacity>
-        <Text className="text-white text-lg font-bold">Albums</Text>
+        <Text className="text-white text-lg font-bold">Photocards</Text>
         <TouchableOpacity>
           <Search size={24} color="white" />
         </TouchableOpacity>
@@ -122,7 +122,7 @@ export default (): JSX.Element => {
 
       <FlatList
         nestedScrollEnabled={true}
-        data={albums}
+        data={photocards}
         numColumns={2}
         keyExtractor={(item) => item.id}
         columnWrapperStyle={{ justifyContent: "space-between" }}

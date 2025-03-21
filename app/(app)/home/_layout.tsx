@@ -15,7 +15,6 @@ import { ASSETS } from "@/constants";
 
 export default (): JSX.Element => {
   const insets = useSafeAreaInsets();
-  const isAndroid = Platform.OS === "android";
 
   return (
     <View
@@ -26,7 +25,7 @@ export default (): JSX.Element => {
       className="flex-1"
     >
       <ImageBackground
-        className="flex-1"
+        className="flex-1 pt-[50px]"
         resizeMode="cover"
         source={ASSETS.AUTH_BG}
       >
@@ -34,14 +33,9 @@ export default (): JSX.Element => {
           behavior={Platform.OS === "ios" ? "padding" : "height"}
           className="flex-1"
         >
-          <ScrollView
-            showsVerticalScrollIndicator={false}
-            className="flex-1 pt-[30px]"
-          >
-            <Slot />
-          </ScrollView>
+          <Slot />
 
-          <View className="absolute bottom-4 left-0 right-0 flex-row justify-around items-center bg-white/10 py-3 rounded-full mx-4">
+          <View className="absolute bottom-4 left-0 right-0 flex-row justify-around items-center bg-white/60 py-3 rounded-full mx-4">
             <TouchableOpacity className="items-center">
               <ShoppingCart color="white" size={24} />
               <Text className="text-white text-sm">Cart</Text>

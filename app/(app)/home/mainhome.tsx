@@ -54,7 +54,7 @@ export default (): JSX.Element => {
         </TouchableOpacity>
       </View>
 
-      <View className="min-h-[250px] bg-purple-500/20 p-4 rounded-xl mt-2 relative">
+      <View className="min-h-[150px] bg-purple-500/20 p-4 rounded-xl mt-2 relative">
         <Text className="text-white text-lg font-bold">11.11</Text>
         <Text className="text-white font-semibold">Free Shipping Special</Text>
         <Text className="text-white text-xs opacity-70">
