@@ -3,6 +3,7 @@
  */
 export { AppSplashScreen } from "./app/AppSplashScreen";
 export { AppLogo } from "./app/AppLogo";
+export { AppCheckbox } from "./app/AppCheckbox";
 
 /**
  * Auth components
