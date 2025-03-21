@@ -22,7 +22,7 @@ export default function PricingPlan() {
   const [selectedPlan, setSelectedPlan] = React.useState<string | null>("free");
 
   const redirectToHome = () => {
-    router.push("/(app)/home/home");
+    router.push("/(app)/home/mainhome");
   };
 
   return (
