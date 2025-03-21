@@ -8,7 +8,7 @@ export default (): JSX.Element => {
 
   const handleRedirect = () => {
     setTimeout(() => {
-      router.replace("/(app)/auth/signin");
+      router.replace("/(app)/home/mainhome");
     }, 1000);
   };
 
