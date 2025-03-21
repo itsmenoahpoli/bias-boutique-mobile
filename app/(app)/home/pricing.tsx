@@ -1,23 +1,29 @@
-import { useState } from "react";
+import React from "react";
+import { useRouter } from "expo-router";
 import { View, Text, TouchableOpacity } from "react-native";
 
-export default function PricingPlan() {
-  const [selectedPlan, setSelectedPlan] = useState<string | null>("free");
+const plans = [
+  {
+    id: "free",
+    title: "7 days free",
+    price: "₱1788 billed annually after trial",
+  },
+  { id: "monthly", title: "Monthly", price: "₱149 per month" },
+  {
+    id: "annual",
+    title: "Annual",
+    price: "₱894 per year",
+    discount: "₱74.5 / month",
+  },
+];
 
-  const plans = [
-    {
-      id: "free",
-      title: "7 days free",
-      price: "₱1788 billed annually after trial",
-    },
-    { id: "monthly", title: "Monthly", price: "₱149 per month" },
-    {
-      id: "annual",
-      title: "Annual",
-      price: "₱894 per year",
-      discount: "₱74.5 / month",
-    },
-  ];
+export default function PricingPlan() {
+  const router = useRouter();
+  const [selectedPlan, setSelectedPlan] = React.useState<string | null>("free");
+
+  const redirectToHome = () => {
+    router.push("/(app)/home/home");
+  };
 
   return (
     <View className="flex-1 items-center justify-center px-6">
@@ -55,7 +61,10 @@ export default function PricingPlan() {
       <Text className="text-white text-sm opacity-70 mt-4">Cancel anytime</Text>
       <Text className="text-white text-xs opacity-50">Terms and Condition</Text>
 
-      <TouchableOpacity className="mt-6 bg-white/20 px-6 py-3 rounded-xl">
+      <TouchableOpacity
+        className="mt-6 bg-white/20 px-6 py-3 rounded-xl"
+        onPress={redirectToHome}
+      >
         <Text className="text-white text-lg font-semibold">
           CONTINUE TO PURCHASE
         </Text>
