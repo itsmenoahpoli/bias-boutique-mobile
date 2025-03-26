@@ -31,7 +31,7 @@ export default (): JSX.Element => {
           <Text className="text-white text-lg">Good Morning 👋</Text>
           <Text className="text-white text-2xl font-bold">Juan Dela Cruz</Text>
         </View>
-        <View className="flex-row space-x-4">
+        <View className="flex-row gap-3">
           <Bell size={24} color="white" />
           <Settings size={24} color="white" />
         </View>

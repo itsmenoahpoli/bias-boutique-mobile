@@ -33,7 +33,7 @@ export default (): JSX.Element => {
       className="flex-1"
     >
       <ImageBackground
-        className="flex-1 pt-[50px]"
+        className={`flex-1 pt-[${Platform.OS === "ios" ? "90px" : "50px"}]`}
         resizeMode="cover"
         source={ASSETS.AUTH_BG}
       >
@@ -44,7 +44,11 @@ export default (): JSX.Element => {
           <Slot />
 
           {isPricingPage ? null : (
-            <View className="absolute bottom-4 left-0 right-0 flex-row justify-around items-center bg-white/60 py-1 rounded-full mx-4">
+            <View
+              className={`absolute bottom-${
+                Platform.OS === "ios" ? "20" : "10"
+              } left-0 right-0 flex-row justify-around items-center bg-white/60 py-1 rounded-full mx-4`}
+            >
               <TouchableOpacity
                 className="items-center"
                 onPress={() => handleRedirect("cart")}
