@@ -32,7 +32,7 @@ export default (): JSX.Element => {
         >
           <ScrollView
             showsVerticalScrollIndicator={false}
-            className={`flex-1 ${isAndroid ? "pt-[80px]" : "pt-[100px]"}`}
+            className={`flex-1 ${isAndroid ? "pt-[130px]" : "pt-[100px]"}`}
             contentContainerStyle={{
               paddingBottom: 24,
               minHeight: "100%",

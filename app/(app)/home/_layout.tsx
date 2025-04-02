@@ -30,10 +30,10 @@ export default (): JSX.Element => {
         marginTop: -insets.top,
         marginBottom: -insets.bottom,
       }}
-      className="flex-1"
+      className="flex-1 relative"
     >
       <ImageBackground
-        className={`flex-1 pt-[${Platform.OS === "ios" ? "90px" : "50px"}]`}
+        className={`flex-1 relative pt-[20px]`}
         resizeMode="cover"
         source={ASSETS.AUTH_BG}
       >
@@ -45,9 +45,7 @@ export default (): JSX.Element => {
 
           {isPricingPage ? null : (
             <View
-              className={`absolute bottom-${
-                Platform.OS === "ios" ? "20" : "10"
-              } left-0 right-0 flex-row justify-around items-center bg-white/60 py-1 rounded-full mx-4`}
+              className={`absolute bottom-10 left-0 right-0 flex-row justify-around items-center bg-white/60 py-1 rounded-full mx-4`}
             >
               <TouchableOpacity
                 className="items-center"
