@@ -17,11 +17,13 @@ export default (): JSX.Element => {
   const router = useRouter();
   const insets = useSafeAreaInsets();
 
-  const isPricingPage = pathname === "/home/pricing";
-
   const handleRedirect = (page: string) => {
     // @ts-ignore
     router.push(`/(app)/home/${page}`);
+  };
+
+  const hideFooter = () => {
+    return pathname === "/home/pricing" || pathname === "/home/cart";
   };
 
   return (
@@ -33,7 +35,7 @@ export default (): JSX.Element => {
       className="flex-1 relative"
     >
       <ImageBackground
-        className={`flex-1 relative pt-[20px]`}
+        className={`flex-1 relative`}
         resizeMode="cover"
         source={ASSETS.AUTH_BG}
       >
@@ -41,11 +43,14 @@ export default (): JSX.Element => {
           behavior={Platform.OS === "ios" ? "padding" : "height"}
           className="flex-1"
         >
-          <Slot />
+          <View className="flex-1">
+            <Slot />
+          </View>
 
-          {isPricingPage ? null : (
+          {/* Fixed footer */}
+          {hideFooter() ? null : (
             <View
-              className={`absolute bottom-10 left-0 right-0 flex-row justify-around items-center bg-white/60 py-1 rounded-full mx-4`}
+              className={`absolute bottom-5 left-0 right-0 flex-row justify-around items-center bg-white/60 py-1 rounded-full mx-4`}
             >
               <TouchableOpacity
                 className="items-center"

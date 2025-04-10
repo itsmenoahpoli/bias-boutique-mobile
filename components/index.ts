@@ -4,6 +4,7 @@
 export { AppSplashScreen } from "./app/AppSplashScreen";
 export { AppLogo } from "./app/AppLogo";
 export { AppCheckbox } from "./app/AppCheckbox";
+export { AppHeader } from "./app/AppHeader";
 
 /**
  * Auth components
