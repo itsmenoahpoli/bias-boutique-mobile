@@ -1,7 +1,8 @@
 import { View, Text, Pressable, ScrollView } from "react-native";
 import { AppHeader } from "@/components";
+import { useRouter } from "expo-router";
 
-const CheckoutFooter = () => {
+const CheckoutFooter = (props: { handleCheckout: () => void }) => {
   return (
     <View className="w-full h-[80px] bg-white/80 p-4 rounded-t-xl absolute bottom-0">
       <View className="flex-row justify-between">
@@ -9,7 +10,10 @@ const CheckoutFooter = () => {
           Total <Text className="font-bold">PHP 575.99</Text>
         </Text>
 
-        <Pressable className="bg-[#295796] rounded-xl py-4 px-6">
+        <Pressable
+          className="bg-[#295796] rounded-xl py-4 px-6"
+          onPress={props.handleCheckout}
+        >
           <Text className="text-white font-medium">Checkout</Text>
         </Pressable>
       </View>
@@ -17,7 +21,13 @@ const CheckoutFooter = () => {
   );
 };
 
-export default function Card() {
+export default function ShoppingCart() {
+  const router = useRouter();
+
+  const handleCheckout = () => {
+    router.push("/home/checkout-payment");
+  };
+
   return (
     <View className="flex-1">
       <AppHeader title="Shopping Cart">
@@ -31,7 +41,7 @@ export default function Card() {
           <ScrollView className="flex-1 border border-white"></ScrollView>
         </View>
 
-        <CheckoutFooter />
+        <CheckoutFooter handleCheckout={handleCheckout} />
       </View>
     </View>
   );

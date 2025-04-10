@@ -23,7 +23,11 @@ export default (): JSX.Element => {
   };
 
   const hideFooter = () => {
-    return pathname === "/home/pricing" || pathname === "/home/cart";
+    return (
+      pathname === "/home/pricing" ||
+      pathname === "/home/shopping-cart" ||
+      pathname === "/home/checkout-payment"
+    );
   };
 
   return (
@@ -54,7 +58,7 @@ export default (): JSX.Element => {
             >
               <TouchableOpacity
                 className="items-center"
-                onPress={() => handleRedirect("cart")}
+                onPress={() => handleRedirect("shopping-cart")}
               >
                 <ShoppingCart color="white" size={24} />
                 <Text className="text-white text-sm">Cart</Text>
