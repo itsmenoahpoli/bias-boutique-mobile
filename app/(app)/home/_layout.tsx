@@ -1,12 +1,5 @@
-import {
-  ImageBackground,
-  Image,
-  View,
-  Text,
-  Platform,
-  KeyboardAvoidingView,
-  TouchableOpacity,
-} from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
+import { Image, View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { ShoppingCart, ClipboardList, Wallet, User } from "lucide-react-native";
 import { Slot, usePathname, useRouter } from "expo-router";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -36,26 +29,21 @@ export default (): JSX.Element => {
         marginTop: -insets.top,
         marginBottom: -insets.bottom,
       }}
-      className="flex-1 relative"
+      className="flex-1 relative bg-[#530DFF]"
     >
-      <ImageBackground
-        className={`flex-1 relative`}
-        resizeMode="cover"
-        source={ASSETS.AUTH_BG}
+      <LinearGradient
+        colors={["#00c3ff", "#7f00ff", "#000000"]}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+        style={StyleSheet.absoluteFill}
       >
-        <KeyboardAvoidingView
-          behavior={Platform.OS === "ios" ? "padding" : "height"}
-          className="flex-1"
-        >
+        <View className="flex-1">
           <View className="flex-1">
             <Slot />
           </View>
 
-          {/* Fixed footer */}
           {hideFooter() ? null : (
-            <View
-              className={`absolute bottom-5 left-0 right-0 flex-row justify-around items-center bg-white/60 py-1 rounded-full mx-4`}
-            >
+            <View className="absolute bottom-5 left-0 right-0 flex-row justify-around items-center bg-white/60 py-1 rounded-full mx-4">
               <TouchableOpacity
                 className="items-center"
                 onPress={() => handleRedirect("shopping-cart")}
@@ -78,10 +66,11 @@ export default (): JSX.Element => {
               >
                 <View className="items-center justify-center">
                   <Image
-                    className={`w-16 h-16`}
+                    className="w-16 h-16"
                     source={ASSETS.BRAND_LOGO}
                     resizeMethod="resize"
                     resizeMode="contain"
+                    defaultSource={ASSETS.BRAND_LOGO} // Added defaultSource
                   />
                 </View>
               </TouchableOpacity>
@@ -103,8 +92,8 @@ export default (): JSX.Element => {
               </TouchableOpacity>
             </View>
           )}
-        </KeyboardAvoidingView>
-      </ImageBackground>
+        </View>
+      </LinearGradient>
     </View>
   );
 };

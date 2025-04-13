@@ -1,6 +1,6 @@
 import { View, Text, Pressable, ScrollView } from "react-native";
-import { AppHeader } from "@/components";
 import { useRouter } from "expo-router";
+import { AppHeader } from "@/components";
 
 const CheckoutFooter = (props: { handleCheckout: () => void }) => {
   return (

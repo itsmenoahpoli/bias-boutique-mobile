@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "bias-boutique-mobile",
+    "name": "Bias Boutique",
     "slug": "bias-boutique-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -8,18 +8,19 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.itsmenoahpoli.biasboutiquemobile"
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "violet"
       },
       "package": "com.itsmenoahpoli.biasboutiquemobile"
     },
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/brand-logo.png"
     },
     "plugins": [
       "expo-router"
